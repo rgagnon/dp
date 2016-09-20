@@ -1,0 +1,2 @@
+class QuiController < ApplicationController
+end

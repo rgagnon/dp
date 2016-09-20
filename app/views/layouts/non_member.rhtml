@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>
+  	<% if (@title_page.nil?)%>
+    <%='La différenciation pédagogique -' + controller.action_name%>
+    <%else%>
+	<%='differenciationpedagogique.com - ' + @title_page%>
+	<% end %>
+  </title>
+  <%= stylesheet_link_tag 'dp' %>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="Description" content="Différenciation pédagogique,Différenciation de l’enseignement,Différenciation,Différenciation des apprentissages,Différenciation de l’enseignement,Pédagogie différenciée,Enseignement différencié,Travail individualisé différencié,Differentiated Instruction,Differentiated Teaching,Individualisation,Enseignement individualisé,Pédagogie individualisée,Individualization,Individualized Instruction,Individualized Teaching,Individualized Education,Adaptive education,Exemples,Modèles,Illustrations,Façons de faire,Définition,Finalités,Secondaire,Primaire,Évaluation diagnostique,Diagnostic pédagogique">
+  <%= javascript_include_tag "prototype" %>
+  <%= javascript_include_tag "dimmingdiv" %>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3616465-2";
+urchinTracker();
+</script>
+<Script Language="JavaScript">
+<!--
+function load(urlstring) {
+var load = window.open(urlstring,'','scrollbars=yes,height=800,width=850,resizable=yes,toolbar=no,location=no,status=no,menubar=no');}
+-->
+</Script>
+</head>
+<body>
+  <div class="entete">
+      <div id="entete_logo"><%@link = url_for :controller => "dp" %><%=link_to(image_tag("logo.png", :size => "55x55", :border => 0, :alt => "Accueil"),@link )%>
+	  </div>
+	  <div class="entete_titre">
+	    <p>La différenciation pédagogique</p>
+	  </div>
+      <div class="entete_titre2">
+      	<p>Réflexions et actions d’équipes-cycles du préscolaire, du primaire et du secondaire <br/>qui l’ont expérimentée</p>
+      </div>
+  </div>
+  <div class="menu_bar">
+    <div class="<%if controller.controller_name == 'questceque'%>menu1_on<%elsif controller.controller_name == 'exemple'%>menu1_off<%else%>menu1_off<%end%>"><a href="/questceque/questceque">Qu’est-ce que c'est?</a></div>
+    <div class="<%if controller.controller_name == 'questceque'%>menu_img_on<%elsif controller.controller_name == 'exemple'%>menu_img_on_h<%else%>menu_img_off<%end%>"></div>
+    <div class="<%if controller.controller_name == 'exemple'%>menu2_on<%elsif controller.controller_name == 'plusloin'%>menu2_off<%else%>menu2_off<%end%>"><a href="/exemple/exemple">Des exemples concrets</a></div>
+    <div class="<%if controller.controller_name == 'exemple'%>menu_img_on<%elsif controller.controller_name == 'plusloin'%>menu_img_on_h<%else%>menu_img_off<%end%>"></div>
+    <div class="<%if controller.controller_name == 'plusloin'%>menu3_on<%elsif controller.controller_name == 'qui'%>menu3_off<%else%>menu3_off<%end%>"><a href="/plusloin/plusloin">Pour aller plus loin</a></div>
+    <div class="<%if controller.controller_name == 'plusloin'%>menu_img_on<%elsif controller.controller_name == 'qui'%>menu_img_on_h<%else%>menu_img_off<%end%>"></div>
+    <div class="<%if controller.controller_name == 'qui'%>menu4_on<%else%>menu4_off<%end%>"><a href="/qui/qui">Qui sommes-nous?</a></div>
+    <div class="<%if controller.controller_name == 'qui'%>menu_img_on<%else%>menu_img_off<%end%>"></div>
+  </div>
+	<div class="content">
+		<%= @content_for_layout %>
+	</div>
+	<div class="bottom">
+  	  <div class="bottom_phrase">Recherche-action sur la différenciation pédagogique en Montérégie; Coopérative régionale de développement de la Montérégie</div>
+  	  <div class="bottom_1">2007 - Tous droits réservés Consultations Antonissimo Inc.</div>
+  	  <div class="bottom_2">&nbsp;</div>
+  	  <div class="bottom_3"><a href="/contact/contactez-nous">Contactez-nous</a></div>
+	</div>
+</body>
+</html>

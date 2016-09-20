@@ -1,0 +1,2 @@
+module QuestcequeHelper
+end
